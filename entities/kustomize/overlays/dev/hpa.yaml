@@ -1,0 +1,9 @@
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: frontend-deployment-hpa
+spec:
+  minReplicas: 100
+  maxReplicas: 200
+  metrics:
+  - type: Resource

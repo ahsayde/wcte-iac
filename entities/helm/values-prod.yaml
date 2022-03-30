@@ -1,0 +1,6 @@
+image:
+  repository: ubuntu
+  tag: latest
+
+privileged: true
+allowPrivilegeEscalation: true
