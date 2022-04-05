@@ -31,3 +31,7 @@ jobs:
           path: entities/kube
           policy-path: policies/kube
           remediate: true
+          sarif-file: results.sarif
+      - uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: results.sarif
