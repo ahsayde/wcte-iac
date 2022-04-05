@@ -23,6 +23,9 @@ spec:
         - name: container-3
           securityContext:
             privileged: true
+        - name: container-4
+          securityContext:
+            privileged: true
 ---
 apiVersion: apps/v1
 kind: Deployment
