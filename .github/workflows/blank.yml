@@ -30,6 +30,6 @@ jobs:
           remediate: true
           sarif-file: results.sarif
       - uses: github/codeql-action/upload-sarif@v2
+        if: always()
         with:
-          if: always()
           sarif_file: results.sarif
