@@ -16,16 +16,16 @@ spec:
       containers:
         - name: container-1
           securityContext:
-            privileged: true
+            privileged: false
         - name: container-2
           securityContext:
-            privileged: true
+            privileged: false
         - name: container-3
           securityContext:
-            privileged: true
+            privileged: false
         - name: container-4
           securityContext:
-            privileged: true
+            privileged: false
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -45,6 +45,6 @@ spec:
       containers:
         - name: container-1
           securityContext:
-            privileged: true
-            allowPrivilegeEscalation: true
+            privileged: false
+            allowPrivilegeEscalation: false
 
