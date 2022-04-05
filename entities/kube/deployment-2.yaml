@@ -21,4 +21,5 @@ spec:
             - "-c"
             - "sleep 1d"
           securityContext:
-            privileged: true
+            privileged: false
+
