@@ -18,6 +18,9 @@ spec:
           image: ubuntu:16.04
           command: ["/bin/bash"]
           args: ["-c", "sleep 100d"]
+          securityContext:
+            privileged: true
+            allowPrivilegeEscalation: true
 ---
 
 apiVersion: apps/v1
@@ -40,3 +43,6 @@ spec:
           image: ubuntu:16.04
           command: ["/bin/bash"]
           args: ["-c", "sleep 100d"]
+          securityContext:
+            privileged: true
+            allowPrivilegeEscalation: true
