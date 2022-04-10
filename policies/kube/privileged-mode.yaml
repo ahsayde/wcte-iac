@@ -38,19 +38,19 @@ spec:
   - name: privilege
     type: boolean
     required: true
-    default: false
+    value: false
   - name: exclude_namespace
     type: string
     required: false
-    default:
+    value:
   - name: exclude_label_key
     type: string
     required: false
-    default:
+    value:
   - name: exclude_label_value
     type: string
     required: false
-    default:
+    value:
 
   code: |
     package magalix.advisor.podSecurity.privileged
