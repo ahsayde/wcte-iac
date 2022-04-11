@@ -1,48 +1,50 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp-4
-  labels:
-    app: myapp-4
+  name: frontend-deployment
 spec:
   selector:
-    matchLabels:
-      app: myapp-4
+  matchLabels:
+    app: frontend-deployment
   template:
-    metadata:
-      labels:
-        app: myapp-4
-    spec:
-      containers:
-        - name: container-1
-          image: ubuntu:16.04
-          command: ["/bin/bash"]
-          args: ["-c", "sleep 100d"]
-          securityContext:
-            privileged: true
-            allowPrivilegeEscalation: true
+  metadata:
+    labels:
+      app: frontend-deployment
+  spec:
+    containers:
+    - name: app
+      image: foo/bar:latest
+      ports:
+      - name: http
+        containerPort: 8080
+        protocol: TCP
+        securityContext:
+          privileged: true
+          allowPrivilegeEscalation: true
+
 ---
 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp-5
-  labels:
-    app: myapp-5
+  name: backend-deployment
 spec:
   selector:
-    matchLabels:
-      app: myapp-5
+  matchLabels:
+    app: backend-deployment
   template:
-    metadata:
-      labels:
-        app: myapp-5
-    spec:
-      containers:
-        - name: container-1
-          image: ubuntu:16.04
-          command: ["/bin/bash"]
-          args: ["-c", "sleep 100d"]
-          securityContext:
-            privileged: true
-            allowPrivilegeEscalation: true
+  metadata:
+    labels:
+      app: backend-deployment
+  spec:
+    containers:
+    - name: app
+      image: foo/bar:latest
+      ports:
+      - name: http
+        containerPort: 8080
+        protocol: TCP
+        securityContext:
+          privileged: true
+          allowPrivilegeEscalation: true
+  
