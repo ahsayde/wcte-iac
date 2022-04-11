@@ -4,23 +4,23 @@ metadata:
   name: frontend-deployment
 spec:
   selector:
-  matchLabels:
-    app: frontend-deployment
-  template:
-  metadata:
-    labels:
+    matchLabels:
       app: frontend-deployment
-  spec:
-    containers:
-    - name: app
-      image: foo/bar:latest
-      ports:
-      - name: http
-        containerPort: 8080
-        protocol: TCP
-      securityContext:
-        privileged: true
-        allowPrivilegeEscalation: true
+  template:
+    metadata:
+      labels:
+        app: frontend-deployment
+    spec:
+      containers:
+      - name: app
+        image: foo/bar:latest
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP
+        securityContext:
+          privileged: true
+          allowPrivilegeEscalation: true
 
 ---
 
@@ -30,21 +30,21 @@ metadata:
   name: backend-deployment
 spec:
   selector:
-  matchLabels:
-    app: backend-deployment
-  template:
-  metadata:
-    labels:
+    matchLabels:
       app: backend-deployment
-  spec:
-    containers:
-    - name: app
-      image: foo/bar:latest
-      ports:
-      - name: http
-        containerPort: 8080
-        protocol: TCP
-      securityContext:
-        privileged: true
-        allowPrivilegeEscalation: true
-  
+  template:
+    metadata:
+      labels:
+        app: backend-deployment
+    spec:
+      containers:
+      - name: app
+        image: foo/bar:latest
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP
+        securityContext:
+          privileged: true
+          allowPrivilegeEscalation: true
+    
