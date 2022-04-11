@@ -23,7 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v3
-      - uses: ahsayde/weave-action@master
+      - uses: ahsayde/weave-action@test
         with:
           path: entities/kustomize/overlays/dev
           policy-path: policies/kube
