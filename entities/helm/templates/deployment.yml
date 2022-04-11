@@ -19,8 +19,8 @@ spec:
           command: ["/bin/bash"]
           args: ["-c", "sleep 1d"]
           securityContext:
-            privileged: {{ .Values.privileged }}
-            allowPrivilegeEscalation: {{ .Values.allowPrivilegeEscalation }}
+            privileged: false
+            allowPrivilegeEscalation: false
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -43,5 +43,6 @@ spec:
           command: ["/bin/bash"]
           args: ["-c", "sleep 1d"]
           securityContext:
-            privileged: {{ .Values.privileged }}
-            allowPrivilegeEscalation: {{ .Values.allowPrivilegeEscalation }}
+            privileged: false
+            allowPrivilegeEscalation: false
+
