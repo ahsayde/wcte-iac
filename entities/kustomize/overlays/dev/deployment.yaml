@@ -12,18 +12,16 @@ spec:
         app: frontend-deployment
     spec:
       containers:
-      - name: app
-        image: foo/bar:latest
-        ports:
-        - name: http
-          containerPort: 8080
-          protocol: TCP
-        securityContext:
-          privileged: true
-          allowPrivilegeEscalation: true
-
+        - name: app
+          image: foo/bar:latest
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          securityContext:
+            privileged: false
+            allowPrivilegeEscalation: false
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -38,13 +36,13 @@ spec:
         app: backend-deployment
     spec:
       containers:
-      - name: app
-        image: foo/bar:latest
-        ports:
-        - name: http
-          containerPort: 8080
-          protocol: TCP
-        securityContext:
-          privileged: true
-          allowPrivilegeEscalation: true
-    
+        - name: app
+          image: foo/bar:latest
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          securityContext:
+            privileged: false
+            allowPrivilegeEscalation: false
+
