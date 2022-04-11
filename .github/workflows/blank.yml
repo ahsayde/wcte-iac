@@ -26,7 +26,7 @@ jobs:
       - uses: ahsayde/weave-action@test
         with:
           path: entities/helm
-          helm-values-file: entities/helm/values-dev.yaml
+          helm-values-file: entities/helm/values-prod.yaml
           policies-path: policies/kube
           remediate: true
           sarif-file: results.sarif
